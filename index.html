@@ -1,1 +1,217 @@
-"Hello World" 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Miguel Mendieta</title>
+    <style>
+        body {
+        background: linear-gradient(to bottom, #131180 10%, #e74393 80%, #fb9c4c 100%);
+        }
+
+        #sky {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        }
+
+        #shootingstars {
+        margin: 0;
+        padding: 0;
+        width: 150vh;
+        height: 100vw;
+        position: fixed;
+        overflow: hidden;
+        transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%))
+            rotate(120deg);
+        }
+
+        .wish {
+        height: 2px;
+        top: 300px;
+        width: 100px;
+        margin: 0;
+        opacity: 0;
+        padding: 0;
+        background-color: white;
+        position: absolute;
+        background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
+        filter: drop-shadow(0 0 6px white);
+        overflow: hidden;
+        }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+#box {
+    position: absolute;
+    z-index: -100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 110vh;
+  overflow: hidden;
+}
+#stars {
+    position: absolute;
+    z-index: -100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+        #canvas {
+            transform: rotate(12deg);
+            position: absolute;
+        }
+        #starfield {
+            display: block;
+        }
+        .parrafo {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            text-align: center;
+            color: white;
+        }
+        .parrafo h1{
+            font-size: 38pt;
+        }
+        .parrafo h2{
+            font-size: 28pt;
+        }
+        .parrafo h3{
+            font-size: 21pt;
+            color:#37daf5;
+        }
+        .parrafo h4{
+            font-size: 16pt;
+            color:#b6ed21;
+        }
+</style>
+    <script src="anime.min.js"></script>
+    
+</head>
+<body>
+    <div class="parrafo">
+        <h3>Hola! me llamo</h3>
+        <h1>Miguel Mendieta</h1>
+        <h3>y soy</h3>
+        <h2>Desarrollador Web</h2>
+        <h3>Cuento con experiencia en las siguientes tecnologías:</h3>
+        <h4>✦ asp.Net ✦</h4>
+        <h4>✦ .Net Core ✦</h4>
+        <h4>✦ sql server ✦</h4>
+        <h4>✦ C# ✦</h4>
+        <h4>✦ API Rest ✦</h4>
+        <h4>✦ javascript ✦</h4>
+    </div>
+    <div id="box">        
+        <canvas id="canvas" width="" height=""></canvas>
+        
+      </div>
+      <div id="stars">
+        <canvas id="starfield" ></canvas>
+      </div>
+      
+      <script>
+        let box = document.getElementById("box");
+let canvas = document.getElementById("canvas");
+let context = canvas.getContext("2d");
+
+let drops,
+    maxSpeed = 1.6,
+    spacing = 60,
+    xPosition,
+    n;
+
+function init() {
+  canvas.width = box.clientWidth * 1.3;
+  canvas.height = box.clientHeight * 1.3;
+
+  drops = [];
+  xPosition = 0;
+  n = canvas.width / spacing;
+
+  for (let i = 0; i < n; i++) {
+    xPosition += spacing;
+    drops.push({
+      x: xPosition,
+      y: Math.round(Math.random() * canvas.height),
+      width: 0.7,
+      height: Math.round(Math.random() * canvas.height),
+      speed: Math.round(Math.random() * maxSpeed)+0.4,
+    });
+  }
+}
+
+function rain() {   
+
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  for (let i = 0; i < n; i++){
+    var my_gradient = context.createLinearGradient(0, 0, drops[i].width, canvas.height);
+    my_gradient.addColorStop(0, "white");
+    my_gradient.addColorStop(1, "#fb9c4c");
+
+    //context.fillStyle = "#fb9c4c";
+    context.fillStyle = my_gradient;
+    context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+    drops[i].y += drops[i].speed;
+
+    if (drops[i].y > canvas.height) {
+      drops[i].y = 0 - drops[i].height;
+    }
+  }
+  requestAnimationFrame(rain);
+}
+function stars(){
+    let box = document.getElementById("stars");
+    let canvas = document.getElementById("starfield"),
+    context = canvas.getContext("2d"),
+    stars = 600;
+    canvas.width = box.clientWidth ;
+    canvas.height = box.clientHeight -1.3;
+    colorrange = [0,60,240];
+    for (var i = 0; i < stars; i++) {
+        //starSize = (Math.random() *2)+0.2;
+        radius = Math.random() * 395.4;
+        x = Math.random() * canvas.width;
+        y = Math.random() * canvas.height;
+        hue = colorrange[getRandom(0,colorrange.length - 1)],
+        sat = getRandom(50,100);
+        context.beginPath();
+        context.arc(x, y, radius, 0, 360);
+        context.fillStyle = "hsl(" + hue + ", " + sat + "%, 25%,0.5%)";
+        context.fill();
+    }
+
+}
+function getRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function main() {
+  init();
+  rain();
+  stars();
+}
+
+window.addEventListener('load', main, false);
+window.addEventListener('resize', init, false);
+    </script>
+</body>
+</html>
