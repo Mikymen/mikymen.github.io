@@ -6,58 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Miguel Mendieta</title>
     <style>
-        body {
+        .fondo {
         background: linear-gradient(to bottom, #131180 10%, #e74393 80%, #fb9c4c 100%);
-        }
-
-        #sky {
-        width: 100vw;
-        height: 100vh;
+        /* background: linear-gradient(to bottom, #131180 10%, #bd3293 80%, #e99f22 100%); */
+        width: 100%;
+        height: 100%;
         position: fixed;
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-        }
-
-        #shootingstars {
-        margin: 0;
-        padding: 0;
-        width: 150vh;
-        height: 100vw;
-        position: fixed;
-        overflow: hidden;
-        transform: translatex(calc(50vw - 50%)) translatey(calc(50vh - 50%))
-            rotate(120deg);
-        }
-
-        .wish {
-        height: 2px;
-        top: 300px;
-        width: 100px;
-        margin: 0;
-        opacity: 0;
-        padding: 0;
-        background-color: white;
-        position: absolute;
-        background: linear-gradient(-45deg, white, rgba(0, 0, 255, 0));
-        filter: drop-shadow(0 0 6px white);
-        overflow: hidden;
+        z-index: -100;
         }
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body {
+ body {
   display: flex;
-  justify-content: center;
+  
+  font-family: 'Trebuchet MS';
+  /* justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
+  height: 100vh; */
+} 
 #box {
-    position: absolute;
+    position: fixed;
     z-index: -100;
   display: flex;
   justify-content: center;
@@ -67,7 +39,7 @@ body {
   overflow: hidden;
 }
 #stars {
-    position: absolute;
+    position: fixed;
     z-index: -100;
   display: flex;
   justify-content: center;
@@ -77,49 +49,262 @@ body {
   overflow: hidden;
 }
         #canvas {
-            transform: rotate(12deg);
+            /*transform: rotate(12deg);*/
             position: absolute;
         }
         #starfield {
             display: block;
         }
+        .cabecera{
+            width: 100%;
+            margin-top: 60px;
+        }
+        .nombre{
+            width: 50%;
+            display: inline-block;
+            vertical-align: middle;
+            padding-right: 20px;
+        }
+        .nombre span{
+            font-size: 46pt;
+            display: block;
+            text-align: right;
+            font-family: vir01;
+            filter:drop-shadow(1px 2px 0px #ffffffbf);
+            background-image: linear-gradient(0deg, #d40aa1 35%, #62034f 47%, #73a3de 52%, #cce2fc 90%);
+            background-size: 100%;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            -moz-text-fill-color: transparent;
+        }
+        
         .parrafo {
+            display: inline-block;
+            width: 100%;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            text-align: center;
             color: white;
+            /* background-color: #00000070;
+            margin: 10px;
+            padding: 10px; */
         }
         .parrafo h1{
             font-size: 38pt;
+            /* text-shadow: rgb(0, 0, 0) 5px 5px 70px; */
+            
         }
         .parrafo h2{
             font-size: 28pt;
+            text-shadow: rgb(0, 0, 0) 4px 4px 70px;
         }
-        .parrafo h3{
+        h3{
             font-size: 21pt;
-            color:#37daf5;
+            color:#1affe5;
+            text-shadow: #1affe5bf 1px 1px 10px;
         }
-        .parrafo h4{
-            font-size: 16pt;
+        h4{
+            font-size: 15pt;
             color:#b6ed21;
+            text-shadow: rgb(0, 0, 0) 3px 3px 50px;
+            margin: 20px 0px 6px 0px;
         }
+        #sol{
+            width: 250px;
+            filter: drop-shadow(0px 5px 10px #de3cbb);
+            z-index: -99;
+            position: absolute;
+            /* margin-right: 50%; */
+            bottom: -100px;
+        }
+        .cuerpo{
+            margin: 15px;
+            width: 100%;
+        }
+        .columna{
+            float: left;
+            width: 50%;
+            padding: 10px;
+        }
+        .fila{
+            margin-bottom: 35px;
+        }
+        .fila::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media screen and (max-width: 600px) {
+            .columna {
+                width: 100%;
+            }
+        }
+        .foto {
+            width: 256px;
+            height: 256px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: solid #ffffff 2px;
+            margin: 10px;
+            vertical-align: middle;
+        }
+        .circle {
+            width: 200px;
+            height: 200px;
+            background-color: #764ABC;
+            float: left;
+            border-radius: 50%;
+            shape-outside: circle(50%);
+        }
+        @font-face {
+            font-family: vir01;
+            src: url('fonts/virgo.ttf');
+        }
+        @font-face {
+            font-family: coppercc;
+            src: url('fonts/CopperplateCC-Heavy.ttf');
+        }
+        .titulo{
+            text-align: center;
+            font-size: 38px;
+            font-family: coppercc;
+            color: white;
+            margin: 60px 0px;
+            text-shadow: #1affe5bf 1px 1px 15px;
+        }
+        .resumen{
+            font-size: 22px;
+            text-align: justify;
+            padding: 0px 20%;
+        }
+        .subtitulo{
+            color: white;
+            text-align: center;
+            width: 100%;
+            font-size: 20px;
+            margin-top: 18px;
+        }
+        .logoContacto{
+            width: 70px;
+            display: inline-block;
+            margin: 5px;
+            vertical-align: middle;
+        }
+
+        .container {
+    background-color: #ffffffcf;
+    padding: 2px;
+    margin-bottom: 10px;
+}
+
+.skills {
+  text-align: right; /* Right-align text */
+  color: white; /* White text color */
+  background-color: #e5297c;
+}
+.skills_panel{
+    font-size: 14pt;
+    width: 60%;
+    color:white;
+}
+.csharp {width: 70%;} 
+.sqlserver {width: 65%;} 
+.php {width: 55%;} 
+.javascript {width: 70%;} 
+.python {width: 30%;} 
+.vba {width: 40%;} 
+.css {width: 50%;} 
+.html {width: 60%;} 
+
+
+        @media screen and (max-width: 840px) {
+            .nombre{
+                width: 100%;
+                
+            }
+            .nombre span{
+                text-align: center;
+                font-size: 32pt;
+            }
+            .cabecera{
+                text-align: center;
+            }
+            .titulo{
+                font-size: 24px;
+            }
+            .resumen{
+                padding: 0px 5%;
+            }
+            .skills_panel{
+                width: 100%;
+            }
+        }
+
+* {box-sizing:border-box}
+
+.horizonte {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0.75%, 72.47% 25.15%, 74.85% 25.15%);
+ width:100%;
+ height:350px;
+ background: #3d175f;
+ z-index: -99;
+ position: absolute;
+ left: 0;
+}
+
+.contacto{
+    margin-top: 80px;
+}
+.textoPie{
+    display: block;
+    text-align: center;
+    color: white;
+    margin: 20px 0px;;
+}
+.logos{
+    padding-top: 20px;
+    text-align: center;
+}
+.logos img{
+    width: 400px;
+}
+
+.btn{ 
+    display: inline-block;
+    margin-top: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #1644b3;
+    padding: 10px 80px 10px 30px;
+    border: none;
+    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; */
+    border-radius: 8px;
+    transition: 600ms;
+    /* border: solid #fe20b291 2px; */
+    /* transform: translateY(0); */
+    /* text-transform: uppercase;*/
+ }
+ 
+ .btn:hover{ 
+ transition : 600ms; 
+ background-color: #00000060;
+ color: #ffffff;
+ /* border: solid #fe20b291 2px; */
+ }
+ .btn img{
+    width: 80px;
+    position: absolute;
+    translate: 160px -40px;
+ }
+ 
+
 </style>
-    <script src="anime.min.js"></script>
     
 </head>
 <body>
-    <div class="parrafo">
-        <h3>Hola! me llamo</h3>
-        <h1>Miguel Mendieta</h1>
-        <h3>y soy</h3>
-        <h2>Desarrollador Web</h2>
-        <h3>Cuento con experiencia en las siguientes tecnologías:</h3>
-        <h4>✦ asp.Net ✦</h4>
-        <h4>✦ .Net Core ✦</h4>
-        <h4>✦ sql server ✦</h4>
-        <h4>✦ C# ✦</h4>
-        <h4>✦ API Rest ✦</h4>
-        <h4>✦ javascript ✦</h4>
-    </div>
+    <div class="fondo"></div>
+    
     <div id="box">        
         <canvas id="canvas" width="" height=""></canvas>
         
@@ -128,14 +313,162 @@ body {
         <canvas id="starfield" ></canvas>
       </div>
       
+      <div class="cuerpo">
+        <div class="fila">
+            <div class="subtitulo">Hola! me llamo</div>
+            <div class="cabecera">
+                <div class="nombre">
+                    <span>Miguel</span>
+                    <span>Mendieta</span>                    
+                </div> 
+                <img class="foto" src="miguel.jpg" alt="" />
+            </div>
+            
+        </div>
+        <div class="fila">
+            <div class="titulo">
+                DESARROLLADOR DE APLICACIONES
+            </div>
+        </div>
+        <div class="fila">
+            <div class="columna">
+                
+                <div class="parrafo">
+                    
+                    <div class="resumen">
+                        <h3>Sobre mi</h3>
+                        <br>
+                        Hola!, mi nombre es Miguel Mendieta y soy desarrollador de aplicaciones web y escritorio con experiencia en las tecnologias de Asp.Net, Codeigniter, Apis y base de datos.  Puedo aportar gran valor a su empresa con mis conocimientos adquiridos en el area desarrollo de software.</div>
+                </div>
+            </div>
+            <div class="columna">
+                <div class="parrafo resumen">
+                    <a class="btn" href="doc/CV Miguel Mendieta v2- SP.pdf" target="_blank" >
+                        <img src="logos/pdfdoc.png" alt="">
+                        DESCARGA MI CV</a>
+                </div>
+                
+            </div>
+        </div>
+        <div class="fila">
+            <div class="columna">
+                <div class="logos">
+<img src="logos/logos.png" alt="">
+</div>
+            </div>
+            <div class="columna">
+                
+                <div class="skills_panel">
+                    <h3>Habilidades</h3>
+                    <br />
+                    <p>C#</p>
+                    <div class="container">
+                        <div class="skills csharp">70%</div>
+                    </div>
+
+                    <p>SQL SERVER</p>
+                    <div class="container">
+                    <div class="skills sqlserver">65%</div>
+                    </div>
+
+                    <p>PHP</p>
+                    <div class="container">
+                    <div class="skills php">55%</div>
+                    </div>
+
+                    <p>JAVASCRIPT</p>
+                    <div class="container">
+                        <div class="skills javascript">70%</div>
+                    </div>
+                    <p>PYTHON</p>
+                    <div class="container">
+                        <div class="skills python">30%</div>
+                    </div>
+                    <p>VBA</p>
+                    <div class="container">
+                        <div class="skills vba">40%</div>
+                    </div>
+                    <p>CSS</p>
+                    <div class="container">
+                        <div class="skills css">50%</div>
+                    </div>
+                    <p>HTML</p>
+                    <div class="container">
+                        <div class="skills html">60%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="fila">
+            <div class="columna">
+                <div class="parrafo resumen">
+                    <h3>Experiencia laboral</h3>
+                    <br />
+                    <ul>
+                        <li>Experiencia en el área tecnológica</li>
+                        <li>+7 años en experiencia de desarrollo de software</li>
+                        <li>Experiencia en procesos bancarios</li>
+                        <li>Pasión por desarrollo de software</li>
+                    </ul>
+                </div>
+                
+                <br />
+            </div>
+            <div class="columna">
+                
+            </div>
+        </div>
+        <div class="fila">
+            <div class="horizonte" id="bk"></div>
+            <div class="columna">
+
+            </div>
+            <div class="columna">
+                <div class="parrafo skills_panel contacto">
+                    
+                    <h3>Contacto</h3>
+                    <br />
+                    <!-- CORREO -->
+                    <div class="logoContacto">
+                    <a href="mailto:miguel_mendieta_50@hotmail.com">
+                    <svg id="Layer_1" fill="white" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 88.86" ><title>email</title><path d="M7.05,0H115.83a7.07,7.07,0,0,1,7,7.05V81.81a7,7,0,0,1-1.22,4,2.78,2.78,0,0,1-.66,1,2.62,2.62,0,0,1-.66.46,7,7,0,0,1-4.51,1.65H7.05a7.07,7.07,0,0,1-7-7V7.05A7.07,7.07,0,0,1,7.05,0Zm-.3,78.84L43.53,40.62,6.75,9.54v69.3ZM49.07,45.39,9.77,83.45h103L75.22,45.39l-11,9.21h0a2.7,2.7,0,0,1-3.45,0L49.07,45.39Zm31.6-4.84,35.46,38.6V9.2L80.67,40.55ZM10.21,5.41,62.39,47.7,112.27,5.41Z"/></svg></a>
+</div>
+                    <!-- GITHUB -->
+                    <div class="logoContacto">
+                        <a href="https://github.com/Mikymen" target="_blank">
+                    <svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 98 96"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6-10.839-1.141-22.243-5.378-22.243-24.283 0-5.378 1.94-9.778 5.014-13.2-.485-1.222-2.184-6.275.486-13.038 0 0 4.125-1.304 13.426 5.052a46.97 46.97 0 0 1 12.214-1.63c4.125 0 8.33.571 12.213 1.63 9.302-6.356 13.427-5.052 13.427-5.052 2.67 6.763.97 11.816.485 13.038 3.155 3.422 5.015 7.822 5.015 13.2 0 18.905-11.404 23.06-22.324 24.283 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z" fill="#ffffff"/></svg></a>
+                    </div>
+                    <!-- LINKEDIN -->
+                    <div class="logoContacto">
+                    <a href="https://www.linkedin.com/in/miguel-mendieta-b0692154/" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" ><path d="M29.63.001H2.362C1.06.001 0 1.034 0 2.306V29.69C0 30.965 1.06 32 2.362 32h27.27C30.937 32 32 30.965 32 29.69V2.306C32 1.034 30.937.001 29.63.001z" fill="#0177b5"/><path d="M4.745 11.997H9.5v15.27H4.745zm2.374-7.6c1.517 0 2.75 1.233 2.75 2.75S8.636 9.9 7.12 9.9a2.76 2.76 0 0 1-2.754-2.753 2.75 2.75 0 0 1 2.753-2.75m5.35 7.6h4.552v2.087h.063c.634-1.2 2.182-2.466 4.5-2.466 4.806 0 5.693 3.163 5.693 7.274v8.376h-4.743V19.84c0-1.77-.032-4.05-2.466-4.05-2.47 0-2.85 1.93-2.85 3.92v7.554h-4.742v-15.27z" fill="#fff"/></svg></a>
+</div>
+                    <!-- <h4>Correo electroníco </h4>
+                    <span>miguel_mendieta_50@hotmail.com</span>
+                    <h4>Linkdin </h4>
+                    <span>https://www.linkedin.com/in/miguel-mendieta-b0692154/</span>
+                    <h4>Github </h4>
+                    <span>https://github.com/Mikymen</span> -->
+                </div>
+            </div>
+            
+        </div>
+        <div class ="fila textoPie">Diseñado por Miguel Mendieta <br />La Paz - Bolivia 2023</div>
+    </div>
+    
+      </div>
+
+      
+
+
       <script>
         let box = document.getElementById("box");
 let canvas = document.getElementById("canvas");
 let context = canvas.getContext("2d");
 
 let drops,
-    maxSpeed = 1.6,
-    spacing = 60,
+    maxSpeed = 10.6,
+    spacing = 300,
     xPosition,
     n;
 
@@ -145,73 +478,105 @@ function init() {
 
   drops = [];
   xPosition = 0;
+  yPosition = 0;
   n = canvas.width / spacing;
 
   for (let i = 0; i < n; i++) {
     xPosition += spacing;
+    yPosition = Math.round(Math.random() * canvas.height)
+    _height=getRandom(20,150);
     drops.push({
       x: xPosition,
-      y: Math.round(Math.random() * canvas.height),
-      width: 0.7,
-      height: Math.round(Math.random() * canvas.height),
-      speed: Math.round(Math.random() * maxSpeed)+0.4,
+      y: yPosition,
+      width: 2.0,
+      height: _height,
+      speed: (_height/ canvas.height) * maxSpeed,
+      anguloR : 26* (Math.PI/180) 
     });
   }
 }
 
-function rain() {   
+function cometas() {   
 
   context.clearRect(0, 0, canvas.width, canvas.height);
   for (let i = 0; i < n; i++){
-    var my_gradient = context.createLinearGradient(0, 0, drops[i].width, canvas.height);
-    my_gradient.addColorStop(0, "white");
-    my_gradient.addColorStop(1, "#fb9c4c");
+    largo = drops[i].height/ Math.tan(drops[i].anguloR);
+    var my_gradient = context.createLinearGradient(drops[i].x, drops[i].y, drops[i].x - largo, drops[i].y + drops[i].height);
+    
+    my_gradient.addColorStop(0.1, "#ffffff00");
+    my_gradient.addColorStop(0.95, "white");
 
-    //context.fillStyle = "#fb9c4c";
     context.fillStyle = my_gradient;
-    context.fillRect(drops[i].x, drops[i].y, drops[i].width, drops[i].height);
+    context.strokeStyle = my_gradient;
+    context.lineWidth= drops[i].width;
+    context.beginPath();
+    context.moveTo(drops[i].x, drops[i].y);
+    context.lineTo(drops[i].x - largo, 
+                    drops[i].y + drops[i].height);
+    context.stroke();
     drops[i].y += drops[i].speed;
+    drops[i].x -= drops[i].speed*2;
 
-    if (drops[i].y > canvas.height) {
+
+    if (drops[i].y > canvas.height || drops[i].x < 0) {
       drops[i].y = 0 - drops[i].height;
+      drops[i].x =getRandom(0,n+6)*spacing;
     }
   }
-  requestAnimationFrame(rain);
+  requestAnimationFrame(cometas);
 }
 function stars(){
     let box = document.getElementById("stars");
     let canvas = document.getElementById("starfield"),
     context = canvas.getContext("2d"),
-    stars = 600;
+    stars = 120;
     canvas.width = box.clientWidth ;
     canvas.height = box.clientHeight -1.3;
     colorrange = [0,60,240];
-    for (var i = 0; i < stars; i++) {
+    for (let i = 0; i < stars; i++) {
         //starSize = (Math.random() *2)+0.2;
-        radius = Math.random() * 395.4;
+        radius = Math.random() * 2.1;
         x = Math.random() * canvas.width;
         y = Math.random() * canvas.height;
         hue = colorrange[getRandom(0,colorrange.length - 1)],
         sat = getRandom(50,100);
+        alpha = getRandom(20,100);
         context.beginPath();
         context.arc(x, y, radius, 0, 360);
-        context.fillStyle = "hsl(" + hue + ", " + sat + "%, 25%,0.5%)";
+        context.fillStyle = "hsl(" + hue + ", " + sat + "%, 88%,"+alpha+"%)";
         context.fill();
     }
-
 }
 function getRandom(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+function clamp(num, min, max){
+    return Math.min(Math.max(num, min), max);
+}
+function ctg(x) { return 1 / Math.tan(x); }
+
+
+function paralax(){
+    let scrollTop = window.scrollY;
+  let docHeight = document.body.offsetHeight;
+  let winHeight = window.innerHeight;
+  let scrollPercent = scrollTop / (docHeight - winHeight);
+  let scrollPercentRounded = Math.round(scrollPercent * 100);
+  var adiv = document.getElementById('bk');
+    adiv.style.bottom = scrollPercentRounded-100 +'%';
+    adiv.style.transitionProperty ='all'    ;
+}
+
 
 function main() {
   init();
-  rain();
+  cometas();
   stars();
 }
 
 window.addEventListener('load', main, false);
-window.addEventListener('resize', init, false);
+//window.addEventListener('scroll',(paralax), false);
+//window.addEventListener('resize', init, false);
     </script>
 </body>
 </html>
