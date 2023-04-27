@@ -23,10 +23,6 @@
   display: flex;
   
   font-family: 'Trebuchet MS';
-  /* justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh; */
 } 
 #box {
     position: fixed;
@@ -49,7 +45,6 @@
   overflow: hidden;
 }
         #canvas {
-            /*transform: rotate(12deg);*/
             position: absolute;
         }
         #starfield {
@@ -84,13 +79,9 @@
             width: 100%;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             color: white;
-            /* background-color: #00000070;
-            margin: 10px;
-            padding: 10px; */
         }
         .parrafo h1{
             font-size: 38pt;
-            /* text-shadow: rgb(0, 0, 0) 5px 5px 70px; */
             
         }
         .parrafo h2{
@@ -197,8 +188,8 @@
 }
 
 .skills {
-  text-align: right; /* Right-align text */
-  color: white; /* White text color */
+  text-align: right;
+  color: white; 
   background-color: #e5297c;
 }
 .skills_panel{
@@ -215,6 +206,23 @@
 .css {width: 50%;} 
 .html {width: 60%;} 
 
+
+.logos{
+    padding-top: 20px;
+    text-align: center;
+}
+.logos img{
+    width: 400px;
+}
+.horizonte {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0.75%, 72.47% 25.15%, 74.85% 25.15%);
+ width:100%;
+ height:350px;
+ background: #3d175f;
+ z-index: -99;
+ position: absolute;
+ left: 0;
+}
 
         @media screen and (max-width: 840px) {
             .nombre{
@@ -237,19 +245,17 @@
             .skills_panel{
                 width: 100%;
             }
+            .logos img{
+    width: 100%;
+}
+        }
+        .horizonte {
+            height: 400px;
         }
 
 * {box-sizing:border-box}
 
-.horizonte {
-    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0.75%, 72.47% 25.15%, 74.85% 25.15%);
- width:100%;
- height:350px;
- background: #3d175f;
- z-index: -99;
- position: absolute;
- left: 0;
-}
+
 
 .contacto{
     margin-top: 80px;
@@ -259,13 +265,6 @@
     text-align: center;
     color: white;
     margin: 20px 0px;;
-}
-.logos{
-    padding-top: 20px;
-    text-align: center;
-}
-.logos img{
-    width: 400px;
 }
 
 .btn{ 
@@ -278,24 +277,20 @@
     background-color: #1644b3;
     padding: 10px 80px 10px 30px;
     border: none;
-    /* box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px; */
     border-radius: 8px;
     transition: 600ms;
-    /* border: solid #fe20b291 2px; */
-    /* transform: translateY(0); */
-    /* text-transform: uppercase;*/
  }
  
  .btn:hover{ 
  transition : 600ms; 
  background-color: #00000060;
  color: #ffffff;
- /* border: solid #fe20b291 2px; */
  }
  .btn img{
+    display: inline-block;
     width: 80px;
     position: absolute;
-    translate: 160px -40px;
+    margin: -30px 0px;
  }
  
 
@@ -344,8 +339,10 @@
             <div class="columna">
                 <div class="parrafo resumen">
                     <a class="btn" href="doc/CV Miguel Mendieta v2- SP.pdf" target="_blank" >
-                        <img src="logos/pdfdoc.png" alt="">
-                        DESCARGA MI CV</a>
+                        
+                      <span> DESCARGA MI CV</span> 
+                    <img src="logos/pdfdoc.png" alt="">
+                    </a>
                 </div>
                 
             </div>
