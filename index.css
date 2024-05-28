@@ -162,8 +162,21 @@
         }
         .otros{
             font-size: 22px;
-            text-align: justify;
+            text-align: center;
             padding: 0px 10%;
+
+        }
+        .otros h3 {
+          text-align: center;
+        }
+        .otros iframe{
+          margin-top: 8px;
+          width: 100%;
+          max-width: 960px;
+          max-height: 740;
+        }
+        .otros a {
+          display: inline;
         }
         .subtitulo{
             color: white;
