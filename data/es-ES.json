@@ -1,0 +1,16 @@
+{
+  "welcome_message": "Hola! me llamo",
+  "title_message": "DESARROLLADOR DE APLICACIONES",
+  "download_message": "DESCARGA MI CV",
+  "download_url":"./doc/CV Miguel Mendieta v2- SP.pdf",
+  "sub1_message": "Sobre mi",
+  "ph_message": "Hola!, mi nombre es Miguel Mendieta y soy desarrollador de aplicaciones web y escritorio con experiencia en las tecnologias de Asp.Net, Codeigniter, Apis y base de datos. Puedo aportar gran valor a su empresa con mis conocimientos adquiridos en el area desarrollo de software.",
+  "sub2_message": "Habilidades",
+  "sub3_message": "Experiencia laboral",
+  "ph3_message": "Experiencia en el área tecnológica\n+7 años en experiencia de desarrollo de software\tExperiencia en procesos bancarios\nPasión por desarrollo de software",
+  "sub4_message": "Otros proyectos",
+  "ph4_message": "Estuve trabajando en un proyecto personal con el motor de videojuegos Godot en los ultimos años. Aprendi bastante de GDScript y Blender; abajo podras encontrar algunos avances del juego.",
+  "contact":"Contacto",
+  "fotter_message":"Diseñado por Miguel Mendieta - 2024"
+}
+

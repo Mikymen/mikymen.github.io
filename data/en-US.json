@@ -1,0 +1,15 @@
+{
+  "welcome_message": "Hi! my name is",
+  "title_message": "Full Stack Developer",
+  "download_message": "CV DOWNLOAD",
+  "download_url":"./doc/CV Miguel Mendieta v3- EN.pdf",
+  "sub1_message": "About me",
+  "ph_message": "My name is Miguel Mendieta, and I'm a software developer experienced in web technologies such as Asp.net, Codeigniter, Laravel, and React. I use MVC and SOA architectures to develop modern applications. I can offer my valuable knowledge and contribute to your company to successfully achieve your goals in the technology area.",
+  "sub2_message": "Skills",
+  "sub3_message": "Work Experience",
+  "ph3_message": "I have a lot of experience in the technology area more than 8 years in software development. Banking processing experience. Passion for software development.",
+  "sub4_message": "Other projects",
+  "ph4_message": "I have been working on a personal game in Godot for the last few years. I have been learning too much about GDScript and Blender; below you can find some advances. I like programming in the Godot game engine; I think it is easy to learn and fun. ",
+  "contact":"Get in touch",
+  "fotter_message":"Landing page designed by Miguel Mendieta - 2024"
+}

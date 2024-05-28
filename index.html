@@ -4,304 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio - Miguel Mendieta</title>
-    <style>
-        .fondo {
-        background: linear-gradient(to bottom, #131180 10%, #e74393 80%, #fb9c4c 100%);
-        /* background: linear-gradient(to bottom, #131180 10%, #bd3293 80%, #e99f22 100%); */
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        z-index: -100;
-        }
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
- body {
-  display: flex;
-  
-  font-family: 'Trebuchet MS';
-} 
-#box {
-    position: fixed;
-    z-index: -100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 110vh;
-  overflow: hidden;
-}
-#stars {
-    position: fixed;
-    z-index: -100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-        #canvas {
-            position: absolute;
-        }
-        #starfield {
-            display: block;
-        }
-        .cabecera{
-            width: 100%;
-            margin-top: 60px;
-        }
-        .nombre{
-            width: 50%;
-            display: inline-block;
-            vertical-align: middle;
-            padding-right: 20px;
-        }
-        .nombre span{
-            font-size: 46pt;
-            display: block;
-            text-align: right;
-            font-family: vir01;
-            filter:drop-shadow(1px 2px 0px #ffffffbf);
-            background-image: linear-gradient(0deg, #d40aa1 35%, #62034f 47%, #73a3de 52%, #cce2fc 90%);
-            background-size: 100%;
-            -webkit-background-clip: text;
-            -moz-background-clip: text;
-            -webkit-text-fill-color: transparent; 
-            -moz-text-fill-color: transparent;
-        }
-        
-        .parrafo {
-            display: inline-block;
-            width: 100%;
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: white;
-        }
-        .parrafo h1{
-            font-size: 38pt;
-            
-        }
-        .parrafo h2{
-            font-size: 28pt;
-            text-shadow: rgb(0, 0, 0) 4px 4px 70px;
-        }
-        h3{
-            font-size: 21pt;
-            color:#1affe5;
-            text-shadow: #1affe5bf 1px 1px 10px;
-        }
-        h4{
-            font-size: 15pt;
-            color:#b6ed21;
-            text-shadow: rgb(0, 0, 0) 3px 3px 50px;
-            margin: 20px 0px 6px 0px;
-        }
-        #sol{
-            width: 250px;
-            filter: drop-shadow(0px 5px 10px #de3cbb);
-            z-index: -99;
-            position: absolute;
-            /* margin-right: 50%; */
-            bottom: -100px;
-        }
-        .cuerpo{
-            margin: 15px;
-            width: 100%;
-        }
-        .columna{
-            float: left;
-            width: 50%;
-            padding: 10px;
-        }
-        .fila{
-            margin-bottom: 35px;
-        }
-        .fila::after{
-            content: "";
-            display: table;
-            clear: both;
-        }
-        @media screen and (max-width: 600px) {
-            .columna {
-                width: 100%;
-            }
-        }
-        .foto {
-            width: 256px;
-            height: 256px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: solid #ffffff 2px;
-            margin: 10px;
-            vertical-align: middle;
-        }
-        .circle {
-            width: 200px;
-            height: 200px;
-            background-color: #764ABC;
-            float: left;
-            border-radius: 50%;
-            shape-outside: circle(50%);
-        }
-        @font-face {
-            font-family: vir01;
-            src: url('fonts/virgo.ttf');
-        }
-        @font-face {
-            font-family: coppercc;
-            src: url('fonts/CopperplateCC-Heavy.ttf');
-        }
-        .titulo{
-            text-align: center;
-            font-size: 38px;
-            font-family: coppercc;
-            color: white;
-            margin: 60px 0px;
-            text-shadow: #1affe5bf 1px 1px 15px;
-        }
-        .resumen{
-            font-size: 22px;
-            text-align: justify;
-            padding: 0px 20%;
-        }
-        .subtitulo{
-            color: white;
-            text-align: center;
-            width: 100%;
-            font-size: 20px;
-            margin-top: 18px;
-        }
-        .logoContacto{
-            width: 70px;
-            display: inline-block;
-            margin: 5px;
-            vertical-align: middle;
-        }
-
-        .container {
-    background-color: #ffffffcf;
-    padding: 2px;
-    margin-bottom: 10px;
-}
-
-.skills {
-  text-align: right;
-  color: white; 
-  background-color: #e5297c;
-}
-.skills_panel{
-    font-size: 14pt;
-    width: 60%;
-    color:white;
-}
-.csharp {width: 70%;} 
-.sqlserver {width: 65%;} 
-.php {width: 55%;} 
-.javascript {width: 70%;} 
-.python {width: 30%;} 
-.vba {width: 40%;} 
-.css {width: 50%;} 
-.html {width: 60%;} 
-
-
-.logos{
-    padding-top: 20px;
-    text-align: center;
-}
-.logos img{
-    width: 400px;
-}
-.horizonte {
-    clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 0.75%, 72.47% 25.15%, 74.85% 25.15%);
- width:100%;
- height:350px;
- background: #3d175f;
- z-index: -99;
- position: absolute;
- left: 0;
-}
-
-        @media screen and (max-width: 840px) {
-            .nombre{
-                width: 100%;
-                
-            }
-            .nombre span{
-                text-align: center;
-                font-size: 32pt;
-            }
-            .cabecera{
-                text-align: center;
-            }
-            .titulo{
-                font-size: 24px;
-            }
-            .resumen{
-                padding: 0px 5%;
-            }
-            .skills_panel{
-                width: 100%;
-            }
-            .logos img{
-    width: 100%;
-}
-        }
-        .horizonte {
-            height: 400px;
-        }
-
-* {box-sizing:border-box}
-
-
-
-.contacto{
-    margin-top: 80px;
-}
-.textoPie{
-    display: block;
-    text-align: center;
-    color: white;
-    margin: 20px 0px;;
-}
-
-.btn{ 
-    display: inline-block;
-    margin-top: 50px;
-    cursor: pointer;
-    font-size: 18px;
-    height: 40px;
-    color: #ffffff;
-    background-color: #1644b3;
-    padding: 10px 80px 10px 30px;
-    border: none;
-    border-radius: 8px;
-    transition: 600ms;
- }
- 
- .btn:hover{ 
- transition : 600ms; 
- background-color: #00000060;
- color: #ffffff;
- }
- .btn img{
-    display: inline-block;
-    width: 80px;
-    position: absolute;
-    margin: -30px 0px;
- }
- .ribbon{
-    position: absolute;
-    right: 0;
- }
- 
-
-</style>
+    <title>CV - Miguel Mendieta</title>
+    <link rel="stylesheet" href="./index.css">
     
 </head>
 <body>
+    <nav>
+        <ul class="language">
+            <li>
+                
+                <a href="#" onclick="changeLanguage('en-US')"><img src="./img/united_kingdom.png" alt=""> English</a></li>
+            <li>
+                
+                <a href="#" onclick="changeLanguage('es-ES')"><img src="./img/spain.png" alt=""> Español</a></li>
+        </ul>
+    </nav>
     <a class="ribbon" href="https://github.com/Mikymen"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
     <div class="fondo"></div>
     
@@ -313,9 +30,10 @@
         <canvas id="starfield" ></canvas>
       </div>
       
-      <div class="cuerpo">
+      <main class="cuerpo">
         <div class="fila">
-            <div class="subtitulo">Hola! me llamo</div>
+            <!-- <div class="subtitulo">Hola! me llamo</div> -->
+            <div class="subtitulo" data-i18n="welcome_message"></div>
             <div class="cabecera">
                 <div class="nombre">
                     <span>Miguel</span>
@@ -326,7 +44,7 @@
             
         </div>
         <div class="fila">
-            <div class="titulo">
+            <div class="titulo" data-i18n="title_message">
                 DESARROLLADOR DE APLICACIONES
             </div>
         </div>
@@ -336,17 +54,19 @@
                 <div class="parrafo">
                     
                     <div class="resumen">
-                        <h3>Sobre mi</h3>
+                        <h3 data-i18n="sub1_message"></h3>
                         <br>
-                        Hola!, mi nombre es Miguel Mendieta y soy desarrollador de aplicaciones web y escritorio con experiencia en las tecnologias de Asp.Net, Codeigniter, Apis y base de datos.  Puedo aportar gran valor a su empresa con mis conocimientos adquiridos en el area desarrollo de software.</div>
+                        <p data-i18n="ph_message">
+                        </p>
+                    </div>
                 </div>
             </div>
             <div class="columna">
                 <div class="parrafo resumen">
-                    <a class="btn" href="doc/CV Miguel Mendieta v2- SP.pdf" target="_blank" >
+                    <a class="btn" data-i18n="download_url" href="" target="_blank" >
                         
-                      <span> DESCARGA MI CV</span> 
-                    <img src="logos/pdfdoc.png" alt="">
+                      <span data-i18n="download_message"> DESCARGA MI CV</span> 
+                    <img  src="logos/pdfdoc.png" alt="">
                     </a>
                 </div>
                 
@@ -361,7 +81,7 @@
             <div class="columna">
                 
                 <div class="skills_panel">
-                    <h3>Habilidades</h3>
+                    <h3 data-i18n="sub2_message"></h3>
                     <br />
                     <p>C#</p>
                     <div class="container">
@@ -404,14 +124,15 @@
         <div class="fila">
             <div class="columna">
                 <div class="parrafo resumen">
-                    <h3>Experiencia laboral</h3>
+                    <h3 data-i18n="sub3_message"> </h3>
                     <br />
-                    <ul>
+                    <p data-i18n="ph3_message"></p>
+                    <!-- <ul>
                         <li>Experiencia en el área tecnológica</li>
                         <li>+7 años en experiencia de desarrollo de software</li>
                         <li>Experiencia en procesos bancarios</li>
                         <li>Pasión por desarrollo de software</li>
-                    </ul>
+                    </ul> -->
                 </div>
                 
                 <br />
@@ -420,6 +141,32 @@
                 
             </div>
         </div>
+
+        <div class="fila">
+            <div class="columna">
+                
+            </div>
+            <div class="columna">
+                
+                <div class="parrafo otros">
+                    <h3 data-i18n="sub4_message"></h3>
+                    <br />
+                    <p  data-i18n="ph4_message"></p>
+                    <iframe width="480" height="360" src="https://www.youtube.com/embed/YU5XUeJXClA" title="Test game demo in progress" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <br />
+                    <a href="./img/Captura1.JPG" target="_blank">
+                        <img height="100px" src="./img/Captura1.JPG" alt="">
+                    </a>
+                    <a href="./img/Captura2.JPG" target="_blank">
+                        <img height="100px" src="./img/Captura2.JPG" alt="">
+                    </a>
+                    <a href="./img/Captura3.JPG" target="_blank">
+                        <img height="100px" src="./img/Captura3.JPG" alt=""> 
+                    </a>
+                </div>
+            </div>
+        </div>
+
         <div class="fila">
             <div class="horizonte" id="bk"></div>
             <div class="columna">
@@ -428,7 +175,7 @@
             <div class="columna">
                 <div class="parrafo skills_panel contacto">
                     
-                    <h3>Contacto</h3>
+                    <h3 data-i18n="contact"></h3>
                     <br />
                     <!-- CORREO -->
                     <div class="logoContacto">
@@ -455,130 +202,14 @@
             </div>
             
         </div>
-        <div class ="fila textoPie">Diseñado por Miguel Mendieta <br />La Paz - Bolivia 2023</div>
+        <div class ="fila textoPie" data-i18n="fotter_message"></div>
     </div>
     
-      </div>
+</main>
 
       
+<script src="./index.js" ></script>
 
-
-      <script>
-        let box = document.getElementById("box");
-let canvas = document.getElementById("canvas");
-let context = canvas.getContext("2d");
-
-let drops,
-    maxSpeed = 10.6,
-    spacing = 300,
-    xPosition,
-    n;
-
-function init() {
-  canvas.width = box.clientWidth * 1.3;
-  canvas.height = box.clientHeight * 1.3;
-
-  drops = [];
-  xPosition = 0;
-  yPosition = 0;
-  n = canvas.width / spacing;
-
-  for (let i = 0; i < n; i++) {
-    xPosition += spacing;
-    yPosition = Math.round(Math.random() * canvas.height)
-    _height=getRandom(20,150);
-    drops.push({
-      x: xPosition,
-      y: yPosition,
-      width: 2.0,
-      height: _height,
-      speed: (_height/ canvas.height) * maxSpeed,
-      anguloR : 26* (Math.PI/180) 
-    });
-  }
-}
-
-function cometas() {   
-
-  context.clearRect(0, 0, canvas.width, canvas.height);
-  for (let i = 0; i < n; i++){
-    largo = drops[i].height/ Math.tan(drops[i].anguloR);
-    var my_gradient = context.createLinearGradient(drops[i].x, drops[i].y, drops[i].x - largo, drops[i].y + drops[i].height);
-    
-    my_gradient.addColorStop(0.1, "#ffffff00");
-    my_gradient.addColorStop(0.95, "white");
-
-    context.fillStyle = my_gradient;
-    context.strokeStyle = my_gradient;
-    context.lineWidth= drops[i].width;
-    context.beginPath();
-    context.moveTo(drops[i].x, drops[i].y);
-    context.lineTo(drops[i].x - largo, 
-                    drops[i].y + drops[i].height);
-    context.stroke();
-    drops[i].y += drops[i].speed;
-    drops[i].x -= drops[i].speed*2;
-
-
-    if (drops[i].y > canvas.height || drops[i].x < 0) {
-      drops[i].y = 0 - drops[i].height;
-      drops[i].x =getRandom(0,n+6)*spacing;
-    }
-  }
-  requestAnimationFrame(cometas);
-}
-function stars(){
-    let box = document.getElementById("stars");
-    let canvas = document.getElementById("starfield"),
-    context = canvas.getContext("2d"),
-    stars = 120;
-    canvas.width = box.clientWidth ;
-    canvas.height = box.clientHeight -1.3;
-    colorrange = [0,60,240];
-    for (let i = 0; i < stars; i++) {
-        //starSize = (Math.random() *2)+0.2;
-        radius = Math.random() * 2.1;
-        x = Math.random() * canvas.width;
-        y = Math.random() * canvas.height;
-        hue = colorrange[getRandom(0,colorrange.length - 1)],
-        sat = getRandom(50,100);
-        alpha = getRandom(20,100);
-        context.beginPath();
-        context.arc(x, y, radius, 0, 360);
-        context.fillStyle = "hsl(" + hue + ", " + sat + "%, 88%,"+alpha+"%)";
-        context.fill();
-    }
-}
-function getRandom(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-function clamp(num, min, max){
-    return Math.min(Math.max(num, min), max);
-}
-function ctg(x) { return 1 / Math.tan(x); }
-
-
-function paralax(){
-    let scrollTop = window.scrollY;
-  let docHeight = document.body.offsetHeight;
-  let winHeight = window.innerHeight;
-  let scrollPercent = scrollTop / (docHeight - winHeight);
-  let scrollPercentRounded = Math.round(scrollPercent * 100);
-  var adiv = document.getElementById('bk');
-    adiv.style.bottom = scrollPercentRounded-100 +'%';
-    adiv.style.transitionProperty ='all'    ;
-}
-
-
-function main() {
-  init();
-  cometas();
-  stars();
-}
-
-window.addEventListener('load', main, false);
-//window.addEventListener('scroll',(paralax), false);
-//window.addEventListener('resize', init, false);
-    </script>
+      
 </body>
 </html>
